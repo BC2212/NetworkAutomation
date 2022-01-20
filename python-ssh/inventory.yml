@@ -1,0 +1,32 @@
+all:
+  vars:
+    username: admin
+    password: admin
+  groups:
+    Edge:
+      hosts:
+        - hostname: R-Edge
+          host: 192.168.124.11
+          device_type: cisco_ios
+    Building-A:
+      hosts:
+        - hostname: Sw-Building-A
+          host: 172.16.4.146
+          device_type: cisco_ios
+        - hostname: R-Department-A_1
+          host: 172.16.4.154
+          device_type: cisco_ios
+        - hostname: R-Department-A_2
+          host: 172.16.4.158
+          device_type: cisco_ios
+    Building-B:
+      hosts:
+        - hostname: Sw-Building-B
+          host: 172.16.4.148
+          device_type: cisco_ios
+        - hostname: R-Department-B_1
+          host: 172.16.4.178
+          device_type: cisco_ios
+        - hostname: R-Department-B_1
+          host: 172.16.4.182
+          device_type: cisco_ios
