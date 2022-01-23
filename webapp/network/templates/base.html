@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network controller</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <p>This is {{ name }}.</p>
+      <h2>Devices</h2>
+      <table style="width:100%">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Host</th>
+        </tr>
+        {% for device in devices %}
+        <tr>
+          <td>{{ device.id }}</td>
+          <td><a href="{% url 'device'  device.id %}">{{ device.name }}</a></td>
+          <td>{{ device.host }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+
+</html>
